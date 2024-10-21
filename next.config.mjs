@@ -8,6 +8,7 @@ const nextConfig = {
         hostname: "files.edgestore.dev",
       },
     ],
+    domains: ['utfs.io', 'api.slingacademy.com']
   },
   webpack: (config, { isServer }) => {
     // This ensures the `canvas` package is not bundled on the client-side

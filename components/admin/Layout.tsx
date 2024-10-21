@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import Head from 'next/head'
-import Sidebar from './Sidebar'
 import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 
 interface IProps {
   title: string

@@ -7,6 +7,7 @@ import Alert from "../components/general/Alert";
 import UserDescriptionModal from "../components/modal/UserDescriptionModal";
 import "../styles/globals.css";
 import { getLoginData } from "@/redux/slices/authSlice";
+import Providers from "@/components/modern-layout/providers";
 
 interface IProps {
   children: ReactNode;
@@ -29,7 +30,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <DataProvider>
           <Alert />
           <UserDescriptionModal />
-          <App>{children}</App>
+          <App>
+            <Providers>{children}</Providers>
+          </App>
         </DataProvider>
       </body>
     </html>
