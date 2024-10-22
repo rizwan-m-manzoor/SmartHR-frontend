@@ -2,8 +2,10 @@
 import { DashboardNav } from '@/components/dashboard-nav';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { navItems } from '@/constants/data';
+import { RootState } from '@/redux/store';
 import { MenuIcon } from 'lucide-react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 // import { Playlist } from "../data/playlists";
 
@@ -12,6 +14,7 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function MobileSidebar({ className }: SidebarProps) {
+  const auth = useSelector((state: RootState) => state.auth);
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -27,7 +30,7 @@ export function MobileSidebar({ className }: SidebarProps) {
               </h2>
               <div className="space-y-1">
                 <DashboardNav
-                  items={navItems}
+                  items={navItems(auth.user?.role?.name || "")}
                   isMobileNav={true}
                   setOpen={setOpen}
                 />

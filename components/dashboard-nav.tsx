@@ -206,7 +206,7 @@ export function DashboardNav({
   return (
     <nav className={cn('grid items-start gap-2')}>
       <TooltipProvider>
-        {memoizedItems.map((item) => (
+        {memoizedItems?.map((item) => (
           <Tooltip key={item.title}>
             <TooltipTrigger asChild>{renderNavItem(item)}</TooltipTrigger>
             <TooltipContent
