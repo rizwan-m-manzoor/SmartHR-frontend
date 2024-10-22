@@ -150,25 +150,19 @@ const Navbar = () => {
               ) : auth.user?.role?.name === "organization" ? (
                 <>
                   <Link
-                    href="/organization/jobs"
+                    href="/organization/dashboard"
                     className={`navbar-link ${
-                      pathname === "/organization/jobs" ? "active" : undefined
+                      pathname === "/organization/dashboard"
+                        ? "active"
+                        : undefined
                     }`}
                   >
-                    Jobs Posted
-                  </Link>
-                  <Link
-                    href="/sent_invitation"
-                    className={`navbar-link ${
-                      pathname === "/sent_invitation" ? "active" : undefined
-                    }`}
-                  >
-                    Sent Invitation
+                    Dashboard
                   </Link>
                 </>
               ) : (
                 <Link href="/organization/approval" className="navbar-link">
-                  Dashboard
+                  Administration
                 </Link>
               )}
               <div onClick={handleLogout}>

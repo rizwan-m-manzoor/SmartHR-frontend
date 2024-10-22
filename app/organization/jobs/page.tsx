@@ -15,6 +15,7 @@ import ApplicantModal from "./../../../components/modal/ApplicantModal";
 import CreateJobModal from "./../../../components/modal/CreateJobModal";
 import Loader from "./../../../components/general/Loader";
 import Pagination from "./../../../components/general/Pagination";
+import { Button } from "@/components/ui/button";
 
 const OrganizationJobs = () => {
   const [openJobDetailModal, setOpenJobDetailModal] = useState(false);
@@ -83,17 +84,11 @@ const OrganizationJobs = () => {
       <Head>
         <title>Job Nest | Job Management</title>
       </Head>
-      <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>
         <div className="md:py-10 py-7 md:px-16 px-8 flex-grow">
           <div className="flex items-center justify-between">
             <h1 className="md:text-2xl text-lg font-medium">Job Management</h1>
-            <button
-              onClick={handleClickCreateJob}
-              className="bg-blue-500 hover:bg-blue-600 transition-[background] text-white text-sm rounded-md px-4 py-2"
-            >
-              Create Job
-            </button>
+            <Button onClick={handleClickCreateJob}>Create Job</Button>
           </div>
           {alert.loading ? (
             <Loader size="xl" />
@@ -184,7 +179,6 @@ const OrganizationJobs = () => {
           )}
         </div>
       </div>
-      <Footer />
 
       {selectedItem && openJobDetailModal && (
         <JobDetailModal

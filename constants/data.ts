@@ -121,48 +121,80 @@ export type Product = {
   updated_at: string;
 };
 
-export const navItems: NavItem[] = [
-  {
-    title: "Dashboard",
-    href: "/organization/dashboard",
-    icon: "dashboard",
-    label: "Dashboard",
-  },
-  {
-    title: "Employee",
-    href: "/organization/dashboard/employee",
-    icon: "user",
-    label: "employee",
-  },
-  {
-    title: "Product",
-    href: "/organization/dashboard/product",
-    icon: "product",
-    label: "product",
-  },
-  {
-    title: "Account",
-    icon: "user",
-    label: "account",
-    children: [
-      {
-        title: "Profile",
-        href: "/organization/dashboard/profile",
-        icon: "userPen",
-        label: "profile",
-      },
-      {
-        title: "Login",
-        href: "/login",
-        icon: "login",
-        label: "login",
-      },
-    ],
-  },
-  {
-    title: "Kanban",
-    href: "/organization/dashboard/kanban",
-    icon: "kanban",
-    label: "kanban",
-  },
+export const navItems = (userRole: string): NavItem[] => [
+  ...(userRole === "organization"
+    ? [
+        {
+          title: "Dashboard",
+          href: "/organization/dashboard",
+          icon: "dashboard" as const,
+          label: "Dashboard",
+        },
+        {
+          title: "Smart Recruiter",
+          href: "/organization/jobs",
+          icon: "product" as const,
+          label: "product",
+        },
+        {
+          title: "Sent Invitations",
+          href: "/sent_invitation",
+          icon: "kanban" as const,
+          label: "kanban",
+        },
+      ]
+    : []),
+  ...(userRole === "Authenticated"
+    ? [
+        {
+          title: "Organization Approval",
+          href: "/organization/approval",
+          icon: "product" as const,
+          label: "product",
+        },
+        {
+          title: "Category",
+          href: "/category",
+          icon: "kanban" as const,
+          label: "kanban",
+        },
+      ]
+    : []),
+  // {
+  //   title: "Employee",
+  //   href: "/organization/dashboard/employee",
+  //   icon: "user",
+  //   label: "employee",
+  // },
+  // {
+  //   title: "Product",
+  //   href: "/organization/dashboard/product",
+  //   icon: "product",
+  //   label: "product",
+  // },
+  // {
+  //   title: "Account",
+  //   icon: "user",
+  //   label: "account",
+  //   children: [
+  //     {
+  //       title: "Profile",
+  //       href: "/organization/dashboard/profile",
+  //       icon: "userPen",
+  //       label: "profile",
+  //     },
+  //     {
+  //       title: "Login",
+  //       href: "/login",
+  //       icon: "login",
+  //       label: "login",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Kanban",
+  //   href: "/organization/dashboard/kanban",
+  //   icon: "kanban",
+  //   label: "kanban",
+  // },
 ];

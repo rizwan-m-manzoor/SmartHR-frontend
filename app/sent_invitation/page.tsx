@@ -63,7 +63,6 @@ const SentInvitation = () => {
       <Head>
         <title>Job Nest | Sent Invitation</title>
       </Head>
-      <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>
         <div className="md:py-10 py-6 md:px-16 px-8 flex-grow">
           <h1 className="text-xl font-medium">Sent Invitation</h1>
@@ -86,7 +85,6 @@ const SentInvitation = () => {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 };
