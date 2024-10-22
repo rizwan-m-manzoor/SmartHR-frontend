@@ -19,21 +19,21 @@ const ApplicantModal = ({ openModal, setOpenModal, jobId }: IProps) => {
   const auth = useSelector((state: RootState) => state.auth);
   const applicant = useSelector((state: RootState) => state.applicant);
 
-  useEffect(() => {
-    const checkIfClickedOutside = (e: MouseEvent) => {
-      if (
-        openModal &&
-        modalRef.current &&
-        !modalRef.current.contains(e.target as Node)
-      ) {
-        setOpenModal(false);
-      }
-    };
+  // useEffect(() => {
+  //   const checkIfClickedOutside = (e: MouseEvent) => {
+  //     if (
+  //       openModal &&
+  //       modalRef.current &&
+  //       !modalRef.current.contains(e.target as Node)
+  //     ) {
+  //       setOpenModal(false);
+  //     }
+  //   };
 
-    document.addEventListener("mousedown", checkIfClickedOutside);
-    return () =>
-      document.removeEventListener("mousedown", checkIfClickedOutside);
-  }, [openModal]);
+  //   document.addEventListener("mousedown", checkIfClickedOutside);
+  //   return () =>
+  //     document.removeEventListener("mousedown", checkIfClickedOutside);
+  // }, [openModal]);
 
   useEffect(() => {
     if (jobId && auth.accessToken) {
