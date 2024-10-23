@@ -113,7 +113,7 @@ const EditProfile = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=edit_profile");
+      router.push("/login");
     } else {
       if (auth.user?.role?.name !== "jobseeker") {
         router.push("/");
@@ -208,7 +208,7 @@ const EditProfile = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | My Profile</title>
+        <title>Resource AI | My Profile</title>
       </Head>
       <Navbar />
       <div className="md:py-14 py-7 md:px-16 px-8 bg-neutral-100">

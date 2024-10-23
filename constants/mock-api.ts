@@ -2,13 +2,14 @@
 // 🛑 Nothing in here has anything to do with Nextjs, it's just a fake database
 ////////////////////////////////////////////////////////////////////////////////
 
-import { matchSorter } from 'match-sorter'; // For filtering
-import sortBy from 'sort-by'; // For sorting
 import { faker } from '@faker-js/faker';
+import { matchSorter } from 'match-sorter'; // For filtering
 
 // Define the shape of User data
 
 type Gender = 'male' | 'female';
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export type User = {
   id: number;
@@ -275,6 +276,7 @@ export const fakeProducts = {
     categories?: string;
     search?: string;
   }) {
+    await delay(1000);
     const categoriesArray = categories ? categories.split('.') : [];
     const allProducts = await this.getAll({
       categories: categoriesArray,
@@ -298,6 +300,31 @@ export const fakeProducts = {
       offset,
       limit,
       products: paginatedProducts
+    };
+  },
+
+  // Get a specific product by its ID
+  async getProductById(id: number) {
+    await delay(1000); // Simulate a delay
+
+    // Find the product by its ID
+    const product = this.records.find((product) => product.id === id);
+
+    if (!product) {
+      return {
+        success: false,
+        message: `Product with ID ${id} not found`
+      };
+    }
+
+    // Mock current time
+    const currentTime = new Date().toISOString();
+
+    return {
+      success: true,
+      time: currentTime,
+      message: `Product with ID ${id} found`,
+      product
     };
   }
 };

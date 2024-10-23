@@ -24,10 +24,6 @@ const Category = () => {
   const auth = useSelector((state: RootState) => state.auth);
   const category = useSelector((state: RootState) => state.category);
 
-  useEffect(() => {
-    console.log(category, "here at category");
-  });
-
   const handleClickDelete = (item: ICategory) => {
     setSelectedItem(item);
     setOpenDeleteModal(true);
@@ -55,7 +51,7 @@ const Category = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=category");
+      router.push("/login");
     } else {
       if (auth.user?.role?.name !== "Authenticated") {
         router.push("/");
@@ -82,7 +78,7 @@ const Category = () => {
               Create Category
             </button>
           </div>
-          {alert.loading ? (
+          {alert?.loading ? (
             <Loader size="xl" />
           ) : (
             <>
@@ -105,7 +101,7 @@ const Category = () => {
                         {category.data?.map((item, idx) => (
                           <tr
                             key={item.id}
-                            className="text-center bg-[#F9F9FF] text-sm"
+                            className="text-center bg-card text-sm"
                           >
                             <td className="p-3">{idx + 1}</td>
                             <td>{item.name}</td>

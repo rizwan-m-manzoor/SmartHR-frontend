@@ -48,8 +48,8 @@ const Navbar = () => {
         onClick={() => router.push("/")}
         className="flex items-center cursor-pointer"
       >
-        <Image src={Logo} width={60} height={60} alt="Job Nest" />
-        <h1 className="text-xl">Job Nest</h1>
+        <Image src={Logo} width={60} height={60} alt="Resource AI" />
+        <h1 className="text-xl font-bold">Resource AI</h1>
       </div>
       <div onClick={() => setOpenSidebar(true)} className="lg:hidden block">
         <GiHamburgerMenu className="text-xl cursor-pointer" />
@@ -150,9 +150,9 @@ const Navbar = () => {
               ) : auth.user?.role?.name === "organization" ? (
                 <>
                   <Link
-                    href="/organization/dashboard"
+                    href="/organization/dashboard/overview"
                     className={`navbar-link ${
-                      pathname === "/organization/dashboard"
+                      pathname === "/organization/dashboard/overview"
                         ? "active"
                         : undefined
                     }`}

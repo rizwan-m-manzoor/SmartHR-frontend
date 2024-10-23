@@ -83,14 +83,14 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Sign In</title>
+        <title>Resource AI | Sign In</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>
         <div className="bg-background px-10 py-14 flex-grow">
           <div className="bg-background shadow-md w-full max-w-[400px] border border-gray-300 m-auto px-6 py-12">
             <h1 className="text-xl text-center mb-7 text-gray-600">
-              Sign In to Job Nest
+              Sign In to Resource AI
             </h1>
             <form onSubmit={handleSubmit}>
               <div className="mb-7">
@@ -152,7 +152,7 @@ const Login = () => {
               </button>
             </form>
             <p className="text-sm text-gray-500 text-center mt-8">
-              Don't have a Job Nest account yet?{" "}
+              Don't have a Resource AI account yet?{" "}
               <Link href="/register" className="text-blue-500 outline-0">
                 Sign Up
               </Link>

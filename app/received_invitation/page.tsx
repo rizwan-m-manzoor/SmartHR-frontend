@@ -18,7 +18,7 @@ const ReceivedInvitation = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=received_invitation");
+      router.push("/login");
     } else {
       if (auth.user?.role?.name !== "jobseeker") {
         router.push("/");
@@ -31,7 +31,7 @@ const ReceivedInvitation = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Received Invitation</title>
+        <title>Resource AI | Received Invitation</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>

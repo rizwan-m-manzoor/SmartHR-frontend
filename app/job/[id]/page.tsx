@@ -16,7 +16,7 @@ const JobPage = async ({ params }: PageProps) => {
     return (
       <>
         <Head>
-          <title>Job Nest</title>
+          <title>Resource AI</title>
         </Head>
         <Navbar />
         <div className="md:px-52 px-6 py-10">

@@ -126,21 +126,31 @@ export const navItems = (userRole: string): NavItem[] => [
     ? [
         {
           title: "Dashboard",
-          href: "/organization/dashboard",
+          url: "/organization/dashboard/overview",
           icon: "dashboard" as const,
-          label: "Dashboard",
+          isActive: false,
+          items: [], // Empty array as there are no child items for Dashboard
+        },
+        {
+          title: "Organization",
+          url: "/organization",
+          icon: "userPen" as const,
+          isActive: false,
+          items: [], 
         },
         {
           title: "Smart Recruiter",
-          href: "/organization/jobs",
+          url: "/organization/jobs",
           icon: "product" as const,
-          label: "product",
+          isActive: false,
+          items: [], 
         },
         {
           title: "Sent Invitations",
-          href: "/sent_invitation",
+          url: "/sent_invitation",
           icon: "kanban" as const,
-          label: "kanban",
+          isActive: false,
+          items: [], 
         },
       ]
     : []),
@@ -148,53 +158,58 @@ export const navItems = (userRole: string): NavItem[] => [
     ? [
         {
           title: "Organization Approval",
-          href: "/organization/approval",
+          url: "/organization/approval",
           icon: "product" as const,
-          label: "product",
+          isActive: false,
+          items: [], 
         },
         {
           title: "Category",
-          href: "/category",
+          url: "/category",
           icon: "kanban" as const,
-          label: "kanban",
+          isActive: false,
+          items: [], 
         },
       ]
     : []),
   // {
-  //   title: "Employee",
-  //   href: "/organization/dashboard/employee",
-  //   icon: "user",
-  //   label: "employee",
+  //   title: 'Employee',
+  //   url: '/dashboard/employee',
+  //   icon: 'user',
+  //   isActive: false,
+  //   items: [] // No child items
   // },
   // {
-  //   title: "Product",
-  //   href: "/organization/dashboard/product",
-  //   icon: "product",
-  //   label: "product",
+  //   title: 'Product',
+  //   url: '/dashboard/product',
+  //   icon: 'product',
+  //   isActive: false,
+  //   items: [] // No child items
   // },
   // {
-  //   title: "Account",
-  //   icon: "user",
-  //   label: "account",
-  //   children: [
+  //   title: 'Account',
+  //   url: '#', // Placeholder as there is no direct link for the parent
+  //   icon: 'billing',
+  //   isActive: true,
+
+  //   items: [
   //     {
-  //       title: "Profile",
-  //       href: "/organization/dashboard/profile",
-  //       icon: "userPen",
-  //       label: "profile",
+  //       title: 'Profile',
+  //       url: '/dashboard/profile',
+  //       icon: 'userPen'
   //     },
   //     {
-  //       title: "Login",
-  //       href: "/login",
-  //       icon: "login",
-  //       label: "login",
-  //     },
-  //   ],
+  //       title: 'Login',
+  //       url: '/',
+  //       icon: 'login'
+  //     }
+  //   ]
   // },
   // {
-  //   title: "Kanban",
-  //   href: "/organization/dashboard/kanban",
-  //   icon: "kanban",
-  //   label: "kanban",
-  // },
+  //   title: 'Kanban',
+  //   url: '/dashboard/kanban',
+  //   icon: 'kanban',
+  //   isActive: false,
+  //   items: [] // No child items
+  // }
 ];

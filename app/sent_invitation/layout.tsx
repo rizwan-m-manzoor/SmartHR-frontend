@@ -1,5 +1,5 @@
 import Header from "@/components/modern-layout/header";
-import Sidebar from "@/components/modern-layout/sidebar";
+import AppSidebar from "@/components/modern-layout/app-sidebar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,12 +13,8 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex">
-      <Sidebar />
-      <main className="w-full flex-1 overflow-hidden">
-        <Header />
-        {children}
-      </main>
-    </div>
+    <>
+      <AppSidebar>{children}</AppSidebar>
+    </>
   );
 }

@@ -45,7 +45,7 @@ const JobseekerCV = ({ params }: { params: { id: string } }) => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push(`/login?r=cv/${jobseekerId}`);
+      router.push(`/login`);
     } else {
       if (
         auth.user?.role?.name !== "organization" &&
@@ -59,7 +59,7 @@ const JobseekerCV = ({ params }: { params: { id: string } }) => {
   return (
     <>
       <Head>
-        <title>Job Nest | {data.user?.username} CV</title>
+        <title>Resource AI | {data.user?.username} CV</title>
       </Head>
       <Navbar />
       <div className="md:py-10 py-7 md:px-16 px-8">

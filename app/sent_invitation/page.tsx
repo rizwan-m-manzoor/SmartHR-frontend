@@ -50,7 +50,7 @@ const SentInvitation = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=sent_invitation");
+      router.push("/login");
     } else {
       if (auth.user?.role?.name !== "organization") {
         router.push("/");
@@ -61,7 +61,7 @@ const SentInvitation = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Sent Invitation</title>
+        <title>Resource AI | Sent Invitation</title>
       </Head>
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>
         <div className="md:py-10 py-6 md:px-16 px-8 flex-grow">

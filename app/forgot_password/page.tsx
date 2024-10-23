@@ -67,7 +67,7 @@ const ForgetPassword = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Forgot Password</title>
+        <title>Resource AI | Forgot Password</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>

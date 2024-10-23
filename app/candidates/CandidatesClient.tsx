@@ -30,7 +30,7 @@ const CandidatesClient = ({ data, searchParams }: IProps) => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=candidates");
+      router.push("/login");
     } else {
       if (
         auth.user?.role?.name !== "organization" &&
@@ -50,7 +50,7 @@ const CandidatesClient = ({ data, searchParams }: IProps) => {
   return (
     <>
       <Head>
-        <title>Job Nest | Candidates</title>
+        <title>Resource AI | Candidates</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>

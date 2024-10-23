@@ -41,7 +41,7 @@ export default async function Home() {
   return (
     <>
       <Head>
-        <title>Job Nest | Home</title>
+        <title>Resource AI | Home</title>
       </Head>
       <Navbar />
       <div>

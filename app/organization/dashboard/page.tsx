@@ -5,10 +5,6 @@ import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { getJobs, deleteJob } from "../../../redux/slices/jobSlice";
 import { AppDispatch, RootState } from "../../../redux/store";
-import Head from "next/head";
-import Footer from "../../../components/general/Footer";
-import Navbar from "../../../components/general/Navbar";
-import { OverViewPageView } from "@/app/dashboard-sections/overview/view";
 
 const OrganizationJobs = () => {
   const [currPage, setCurrPage] = useState(1);
@@ -20,7 +16,9 @@ const OrganizationJobs = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=organization/dashboard");
+      router.push("/login");
+    } else if (auth.user?.role?.name === "organization") {
+      router.push("/organization/dashboard/overview");
     } else {
       if (auth.user?.role?.name !== "organization") {
         router.push("/");
@@ -33,16 +31,7 @@ const OrganizationJobs = () => {
       dispatch(getJobs({ token: auth.accessToken, page: currPage }));
   }, [auth, currPage, dispatch]);
 
-  return (
-    <>
-      <Head>
-        <title>Organization Dashboard : Overview</title>
-      </Head>
-      {/* <Navbar /> */}
-      <OverViewPageView />
-      {/* <Footer /> */}
-    </>
-  );
+  return <></>;
 };
 
 export default OrganizationJobs;

@@ -95,7 +95,7 @@ const ResetPassword = ({ params }: { params: { id: string } }) => {
   return (
     <>
       <Head>
-        <title>Job Nest | Reset Password</title>
+        <title>Resource AI | Reset Password</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>

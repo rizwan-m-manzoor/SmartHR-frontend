@@ -22,7 +22,7 @@ const Register = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Sign Up</title>
+        <title>Resource AI | Sign Up</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>

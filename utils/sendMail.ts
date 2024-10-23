@@ -32,7 +32,7 @@ const sendEmail = async(to: string, subject: string, html: string) => {
     const options = {
       from: process.env.MAIL_SENDER_ADDRESS,
       to,
-      subject: `Job Nest - ${subject}`,
+      subject: `Resource AI - ${subject}`,
       html
     }
 

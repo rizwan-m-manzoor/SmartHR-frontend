@@ -89,7 +89,7 @@ const JobApplied = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=job_applied");
+      router.push("/login");
     } else {
       if (auth.user?.role?.name !== "jobseeker") {
         router.push("/");
@@ -100,7 +100,7 @@ const JobApplied = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Job Applied</title>
+        <title>Resource AI | Job Applied</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>

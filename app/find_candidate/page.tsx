@@ -23,7 +23,7 @@ const FindCandidate = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=find_candidate");
+      router.push("/login");
     } else {
       if (
         auth.user?.role?.name !== "organization" &&
@@ -37,7 +37,7 @@ const FindCandidate = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Find Candidate</title>
+        <title>Resource AI | Find Candidate</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>

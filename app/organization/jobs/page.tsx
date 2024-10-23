@@ -66,7 +66,7 @@ const OrganizationJobs = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login?r=organization/jobs");
+      router.push("/login");
     } else {
       if (auth.user?.role?.name !== "organization") {
         router.push("/");
@@ -82,7 +82,7 @@ const OrganizationJobs = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Job Management</title>
+        <title>Resource AI | Job Management</title>
       </Head>
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>
         <div className="md:py-10 py-7 md:px-16 px-8 flex-grow">

@@ -96,7 +96,7 @@ const JobsClient = ({ data, searchParams }: IProps) => {
   return (
     <>
       <Head>
-        <title>Job Nest | Jobs</title>
+        <title>Resource AI | Jobs</title>
       </Head>
       <Navbar />
       <div className="md:py-10 py-7 md:px-16 px-5">

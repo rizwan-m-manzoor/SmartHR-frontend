@@ -102,7 +102,7 @@ const JobDetail = ({ job }: IProps) => {
     <>
       <Head>
         <title>
-          Job Nest | {job.position} at {job.organization?.user?.username}
+          Resource AI | {job.position} at {job.organization?.user?.username}
         </title>
       </Head>
       <Navbar />

@@ -100,7 +100,7 @@ const Jobseeker = () => {
   return (
     <>
       <Head>
-        <title>Job Nest | Jobseeker Register</title>
+        <title>Resource AI | Jobseeker Register</title>
       </Head>
       <Navbar />
       <div className="flex flex-col" style={{ minHeight: "70vh" }}>
