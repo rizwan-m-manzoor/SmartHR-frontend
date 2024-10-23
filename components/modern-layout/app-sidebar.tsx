@@ -51,10 +51,11 @@ import { Icons } from "../icons";
 import SearchInput from "../search-input";
 import ThemeToggle from "./ThemeToggle/theme-toggle";
 import { UserNav } from "./user-nav";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/redux/store";
 import Logo from "../../public/images/logo.png";
 import Image from "next/image";
+import { logout } from "@/redux/slices/authSlice";
 
 export const company = {
   name: "Resource AI",
@@ -69,6 +70,7 @@ export default function AppSidebar({
 }) {
   const router = useRouter();
   const auth = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch<AppDispatch>();
 
   const [mounted, setMounted] = React.useState(false);
   const pathname = usePathname();
@@ -80,6 +82,11 @@ export default function AppSidebar({
   if (!mounted) {
     return null; // or a loading skeleton
   }
+
+  const handleLogout = () => {
+    router.push("/login");
+    dispatch(logout());
+  };
 
   return (
     <SidebarProvider>
@@ -231,7 +238,7 @@ export default function AppSidebar({
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={handleLogout}>
                     <LogOut />
                     Log out
                   </DropdownMenuItem>
