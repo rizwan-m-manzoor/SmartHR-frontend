@@ -61,7 +61,7 @@ const OrganizationJobs = () => {
               <div
                 className="text-sm text-gray-600 leading-loose break-words"
                 dangerouslySetInnerHTML={{
-                  __html: auth.user?.organization?.description,
+                  __html: auth.user?.organization?.description || '',
                 }}
               />
             </div>

@@ -1,4 +1,3 @@
-import Header from "@/components/modern-layout/header";
 import AppSidebar from "@/components/modern-layout/app-sidebar";
 import type { Metadata } from "next";
 

@@ -1,4 +1,4 @@
-import PageContainer from '@/components/layout/page-container';
+import PageContainer from '@/components/modern-layout/page-container';
 import ProfileCreateForm from './profile-create-form';
 
 export default function ProfileViewPage() {
