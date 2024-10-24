@@ -45,7 +45,7 @@ const JobseekerCV = ({ params }: { params: { id: string } }) => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push(`/login`);
+      router.push(`/login?r=cv/${jobseekerId}`);
     } else {
       if (
         auth.user?.role?.name !== "organization" &&

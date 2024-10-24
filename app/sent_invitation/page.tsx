@@ -50,7 +50,7 @@ const SentInvitation = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login");
+      router.push("/login?r=sent_invitation");
     } else {
       if (auth.user?.role?.name !== "organization") {
         router.push("/");

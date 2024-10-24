@@ -30,7 +30,7 @@ const CandidatesClient = ({ data, searchParams }: IProps) => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login");
+      router.push("/login?r=candidates");
     } else {
       if (
         auth.user?.role?.name !== "organization" &&

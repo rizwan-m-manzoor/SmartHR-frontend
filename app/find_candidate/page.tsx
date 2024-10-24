@@ -23,7 +23,7 @@ const FindCandidate = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login");
+      router.push("/login?r=find_candidate");
     } else {
       if (
         auth.user?.role?.name !== "organization" &&

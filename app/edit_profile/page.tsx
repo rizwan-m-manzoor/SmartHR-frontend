@@ -113,7 +113,7 @@ const EditProfile = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login");
+      router.push("/login?r=edit_profile");
     } else {
       if (auth.user?.role?.name !== "jobseeker") {
         router.push("/");

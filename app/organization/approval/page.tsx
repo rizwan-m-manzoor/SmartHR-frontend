@@ -49,7 +49,7 @@ const OrganizationApproval = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login");
+      router.push("/login?r=organization/approval");
     } else {
       if (auth.user?.role?.name !== "Authenticated") {
         router.push("/");

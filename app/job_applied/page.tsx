@@ -89,7 +89,7 @@ const JobApplied = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login");
+      router.push("/login?r=job_applied");
     } else {
       if (auth.user?.role?.name !== "jobseeker") {
         router.push("/");

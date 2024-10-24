@@ -51,7 +51,7 @@ const Category = () => {
 
   useEffect(() => {
     if (!auth.accessToken) {
-      router.push("/login");
+      router.push("/login?r=category");
     } else {
       if (auth.user?.role?.name !== "Authenticated") {
         router.push("/");
